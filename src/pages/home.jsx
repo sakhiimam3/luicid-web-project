@@ -7,13 +7,10 @@ import LoginModal from "../modals/loginModal"
 const Home = () => {
   const [show, setShow] = useState(false)
 
-  const LoginPopup = () => {
+  const loginPopup = () => {
     setShow(true)
   }
 
-  const LoginClose = () => {
-    setShow(false)
-  }
   return (
     <>
 
@@ -39,10 +36,10 @@ const Home = () => {
                     </div>
                     {/* register buttons  */}
                     <div className="register-buttons my-3 d-flex justify-content-center gap-3">
-                      <button className='login_btn'>login</button>
+                      <LoginModal loginBtn={"login_btn"} />
                       <button className='signUp_btn'>signp up</button>
                     </div>
-                    <LoginModal show={show} setShow={setShow} />
+
                   </div>
                 </div>
 
