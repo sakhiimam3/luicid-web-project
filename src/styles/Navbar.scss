@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Recursive:wght@600&display=swap");
+
+.btn-group {
+  Button {
+    background-color: #3f3f3c !important;
+    transition: all 0.5s linear;
+    border: none;
+    outline: none;
+    font-family: "Recursive", sans-serif;
+
+    height: 70px;
+    &:hover {
+      background-color: #1a1708 !important;
+      color: aliceblue;
+      outline: none;
+      border: none;
+    }
+  }
+}

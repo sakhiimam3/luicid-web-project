@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+form {
+  label {
+    font-family: "Recursive", sans-serif;
+    color: rgb(229, 229, 178);
+  }
+  input {
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    padding-left: 10px;
+    border: none;
+    border-radius: 5px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.modal-content {
+  .btn-close {
+    background-color: rgb(94, 61, 3);
+    opacity: 1;
+    color: white;
+  }
+}
