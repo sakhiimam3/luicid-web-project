@@ -1,14 +1,18 @@
-import React from "react";
+import React,{useState} from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Home from "../src/pages/home";
-// import Profile from "./pages/Profile";
+import NavRouter from "./utils/config/Route";
+
+
+
+
+
 const App = () => {
-  return (
-    <>
-      <Home />
-      {/* <Profile /> */}
-    </>
-  );
+    return (
+    <React.Fragment>
+      
+           <NavRouter />
+      
+    </React.Fragment>);
 };
 
 export default App;

@@ -1,19 +1,41 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Recursive:wght@600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap');
+.menu-bar{
 
-.btn-group {
-  Button {
-    background-color: #3f3f3c !important;
+
+  
+  .nav-btn {
+    background-color: rgb(76, 118, 78);
+    padding: 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 900;
+    transition: background-color 0.5s ease 0s;
+    font-family: "Edu VIC WA NT Beginner", cursive;
     transition: all 0.5s linear;
-    border: none;
-    outline: none;
-    font-family: "Recursive", sans-serif;
-
-    height: 70px;
-    &:hover {
-      background-color: #1a1708 !important;
-      color: aliceblue;
-      outline: none;
-      border: none;
+    &:hover{
+        color: white;
+        background-color: rgb(125, 165, 125)
     }
   }
+  
+  .activeButton{
+    background-color: rgb(125, 165, 125);
+    color: white !important;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-family: "Edu VIC WA NT Beginner", cursive;
+    font-weight: 900
+  }
+  
 }
+nav.navbar.navbar-expand.navbar-light {
+  padding: 0px !important;
+  
+}
+
+
+
+

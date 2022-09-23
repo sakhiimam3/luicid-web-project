@@ -1,14 +1,18 @@
 @import "./mixin.scss";
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+.profile{
+     min-height: 100vh;
 
+ 
+    
+}
 .side-bar-column {
-  min-height: 100vh;
-  background-color: rgb(73, 73, 73);
+ 
+ background-color: #667868;
   padding: 0px !important;
   font-family: "Recursive", sans-serif;
-  overflow-y: scroll;
-  position: static;
-  top: 0;
+   height: 100%;
+
   .side-bar-top {
     width: 100%;
     height: 30%;
@@ -44,7 +48,7 @@
       margin-top: 5px;
       margin-bottom: 5px;
       background-color: rgb(132, 155, 133);
-      color: white;
+      color: rgb(255, 255, 255);
       width: 100%;
       height: 40px;
       border-radius: 5px 10px 5px 10px;
@@ -54,4 +58,51 @@
       }
     }
   }
+
+
+    
+}
+
+
+.event-lists{
+  
+   position: relative;
+   background-repeat: no-repeat; 
+   background-color: white;
+   &::before{
+      content: "";
+      background-image: url('../assets/back.jpg');
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      opacity: 0.5;
+   }
+}
+
+
+.card{
+   
+    
+    background-color: gray;
+    .card-header{
+      background-color: rgb(91, 123, 103);
+      color: white;
+     
+    }
+
+    .visit-btn{
+      background-color: rgb(88, 62, 40);
+      border: none;
+      color: white;
+      padding: 12px 12px;
+      border-radius: 10px !important;
+      cursor: pointer;
+      transition: filter 0.25s ease 0s;
+      &:hover{
+        background-color: rgb(114, 80, 51);
+      }
+     
+    }
 }

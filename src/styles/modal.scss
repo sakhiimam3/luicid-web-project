@@ -1,9 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
 
 form {
   label {
-    font-family: "Recursive", sans-serif;
-    color: rgb(229, 229, 178);
+    font-family: "cursive";
+    color: rgb(171, 202, 171);
+    font-weight: bold;
+
   }
   input {
     width: 100%;
@@ -17,12 +19,52 @@ form {
       outline: none;
     }
   }
+
+
 }
 
 .modal-content {
   .btn-close {
-    background-color: rgb(94, 61, 3);
+    background-color: rgb(139, 184, 136);
     opacity: 1;
     color: white;
   }
+}
+.err{
+    color: yellow;
+}
+
+
+
+
+// scss event extra
+
+textarea{
+  width: 100%;
+  min-height: 150px;
+  border-radius: 10px;
+
+  &:focus {
+   outline: none;
+ }
+}
+.event-inputs-date-time {
+input{
+   width: 40%;
+}
+}
+
+select{
+     width: 100%;
+     height: 40px;
+     border-radius: 5px;
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     text-indent: 5px;
+   
+     &:focus{
+        outline: none;
+     }
+
+
 }

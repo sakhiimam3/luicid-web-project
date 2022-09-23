@@ -1,21 +1,23 @@
-import React from 'react'
-import { Routes, Route } from "react-router-dom";
-
-import Ourmission from '../../pages/Ourmission';
+import React from 'react';
+import { Routes, Route,} from "react-router-dom";
+import Home from '../../pages/home';
 import Profile from '../../pages/Profile';
-import About from "../../pages/about"
-import Contact from "../../pages/contact"
+import UserDetail from '../../pages/userDetail';
 const NavRouter = () => {
+
+
+
+   
+
   return (
     <>
+   
       <Routes>
-
-        <Route path="/" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/ourmission" element={<Ourmission />} />
-        <Route path="/profile" element={<Profile />} />
-
-
+        <Route path="/profile" element={<Profile />}  />
+        <Route path="/profile/userDeatl/:id" element={<UserDetail />}  /> 
+        <Route  path="/"  element={<Home  />} />
+      
+      
       </Routes>
 
     </>

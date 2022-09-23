@@ -1,35 +1,66 @@
 import React, { useState } from 'react';
-import { Form } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import axios from "axios"
 import "../styles/modal.scss"
 
 
-const SignUpModal = () => {
-    const [inputField, setInputField] = useState({
+const SignUpModal = (props) => {
+    const [inputField, setInputField] =useState({
         userName: "",
+        password: "",
         email: "",
-        password: ""
 
     })
-    const { userName, email, password } = inputField
+     
+    const [registerInfo, setregisterInfo] = useState({});
+    const [showMessage,setShowMessage]=useState(false)
     // modal open states 
     const [show, setShow] = useState();
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    
+
+
+  
 
     // inputs handler 
+
+  const signup=async()=>{
+         axios.post("http://localhost:5000/register",inputField)
+         .then((res)=>{
+            setregisterInfo(res.data)
+         })
+         .catch((err)=>console.log("somthing went wrong please try again"))
+  }
+
+
+
+
     const inputsHandler = (e) => {
 
-        setInputField({ [e.target.name]: e.target.value })
-
+        setInputField({...inputField, [e.target.name]: e.target.value })
+         
     }
-    console.log(inputField)
 
     const submitButton = (e) => {
         e.preventDefault()
-        console.log(inputField.userName)
-
+        if(inputField.userName !== " " && !inputField.password !== " " && inputField.email  !== " "){
+            signup()
+            setShowMessage(true)
+        }
+        else{
+              alert("Please fill all inputs ")
+        }
+      
+         setInputField({
+            userName: "",
+            password: "",
+            email: "",
+    
+        })
+        setTimeout(()=>{
+            setShow(false)
+        },2000)
     }
 
     return (
@@ -52,23 +83,23 @@ const SignUpModal = () => {
                 style={{ opacity: "10px" }}
 
             >
-                <Modal.Header closeButton style={{ backgroundColor: 'rgb(110 92 63)', color: "white" }}>
-                    <Modal.Title> Register an Account  </Modal.Title>
+                <Modal.Header closeButton style={{ backgroundColor: 'rgb(98, 144, 114)', color: "white" }}>
+                    <Modal.Title> Register an Account   </Modal.Title>
                 </Modal.Header>
-                <Modal.Body style={{ backgroundColor: 'rgb(110 92 63)', color: "white", }}>
+                <Modal.Body style={{ backgroundColor: 'rgb(98, 144, 114)', color: "white", }}>
                     <form onSubmit={submitButton}>
                         <div className="mb-3">
                             <label >User Name</label> <br />
-                            <input type="text" name="userName" placeholder='User Name' value={userName} onChange={inputsHandler} />
+                            <input type="text" name="userName" placeholder='User Name' value={inputField?.userName} onChange={inputsHandler} />
 
                         </div>
                         <div className="mb-3">
                             <label>Password</label> <br />
-                            <input type="password" placeholder='Password' name="password" value={password} onChange={inputsHandler} />
+                            <input type="password" placeholder='Password' name="password" value={inputField?.password} onChange={inputsHandler} />
                         </div>
                         <div className="mb-3">
                             <label >Email address</label> <br />
-                            <input type="email" placeholder='Email' name="email" value={email} onChange={inputsHandler} />
+                            <input type="email" placeholder='Email' name="email" value={inputField?.email} onChange={inputsHandler} />
                             <div className="text-light">We'll never share your email with anyone else.</div>
                         </div>
                         <hr className='text-light mt-4' />
@@ -78,16 +109,21 @@ const SignUpModal = () => {
 
                         </div>
 
+                        <div className='d-flex justify-content-between'>
+                            <div className="err">
+                               {showMessage ? `${registerInfo.message }` :''}
+                                
 
-
-                        <div className='d-flex justify-content-end'>
-                            <button className="btn btn-lg" style={{ backgroundColor: "rgb(74, 52, 21)", color: "white", border: "none", }} onClick={handleClose} >
+                            </div>
+                            <div className="btn-register">
+                            <button className="btn " style={{ backgroundColor: "rgb(44, 86, 50)", color: "white", border: "none", }} onClick={handleClose} >
                                 Close
                             </button>
                             &nbsp;
-                            <button type='submit' className="btn btn-lg" style={{ backgroundColor: " rgb(114 74 9)", color: "white", fontWeight: "bold", border: 'none' }}  >
+                            <button type='submit' className="btn " style={{ backgroundColor: "rgb(74, 52, 21)", color: "white", fontWeight: "bold", border: 'none' }}  >
                                 Sign Up
                             </button>
+                            </div>
                         </div>
                     </form>
                 </Modal.Body>

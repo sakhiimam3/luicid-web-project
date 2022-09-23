@@ -1,0 +1,56 @@
+
+.my-modal {
+    width: 65vw;   
+    max-width: 90vw;
+  
+.modal-header{
+    background-color: rgb(98, 144, 114);
+    color: white;
+         
+    }
+    .modal-content{
+          
+    }
+    .modal-body{
+        background-color: rgb(98, 144, 114);
+       
+        .rbc-day-bg {
+            background-color: rgb(68, 102, 75);
+        }
+    }
+
+}
+
+.fade.modal.show {
+    padding: 0px 10px 100px 17px !important;
+}
+
+.rbc-btn-group button{
+    background-color: rgb(201, 255, 219);
+}
+
+.rbc-date-cell{
+      color: white;
+}
+
+@media (max-width:786px){
+    .my-modal {
+        width: 85vw;   
+        max-width: 90vw;
+}
+}
+
+
+@media (max-width:576px){
+    .my-modal {
+        width: 90vw;   
+        max-width: 90vw;
+}
+}
+
+@media (max-width:400px) and (min-width:320px){
+    .my-modal {
+        width: 85vw;   
+        max-width: 90vw;
+}
+}

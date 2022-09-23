@@ -1,20 +1,17 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
-
+import "../styles/About.scss"
 const About = () => {
   return (
     <>
-      <section>
-        <Container>
-          <Row>
-            <Col>
-              <div className='d-flex justify-content-center align-items-center flex-column text-light ' style={{ height: "50vh" }}>
-                <h1>About</h1>
-                <p className='text-center'>Hey there! We're a team of five studious software developers studying web development at UNC Chapel Hill.</p>
+      <section className='' >
+       
+              <div className='d-flex justify-content-center align-items-center flex-column ' style={{padding: "50px"}}>
+                <h1  >about us</h1>
+                <p className='text-center  text-light'>Hey there! We're a team of five studious software developers studying web development at UNC Chapel Hill.</p>
+                
               </div>
-            </Col>
-          </Row>
-        </Container>
+           
+        
       </section>
     </>
   )

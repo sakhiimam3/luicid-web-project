@@ -1,24 +1,27 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Container, Nav, Navbar, Row, Col, Button, ButtonGroup } from 'react-bootstrap'
+import React  from 'react'
+import { NavLink,useNavigate } from 'react-router-dom'
+import { Container, Nav, Navbar, Row, Col,} from 'react-bootstrap'
 import "../styles/Navbar.scss"
 
-const Navigation = () => {
-    const Navigate = useNavigate()
+const Navigation = (props) => {
+    const Navigate=useNavigate()
+    const {isLoggin}=props
+
+    
+
+
     return (
         <>
-            <Navbar>
+            <Navbar className='menu-bar navbar-fixed-top' >
                 <Container>
                     <Row >
                         <Col>
-                            <Nav>
-                                <ButtonGroup size="lg" className="mb-2 btn-group">
-                                    <Button onClick={() => Navigate("/")}>About Us</Button>
-                                    <Button onClick={() => Navigate("/contact")}>Contact</Button>
-                                    <Button onClick={() => Navigate("/ourmission")}>Our Mission</Button>
-                                    <Button onClick={() => Navigate("/profile")}>My Profile</Button>
-                                </ButtonGroup>
-
+                            <Nav className='nav'>
+                                
+                                    <NavLink to="/"    className={(navData) => (navData.isActive ? "activeButton" : 'nav-btn')}>  About Us  </NavLink>
+                                    <NavLink to="/contact"  className={(navData) => (navData.isActive ? "activeButton" : 'nav-btn')}>  Contact </NavLink>
+                                    <NavLink to="/ourmission"  className={(navData) => (navData.isActive ? "activeButton" : 'nav-btn')}> Our mission   </NavLink>
+                                     {isLoggin ?   <NavLink   to="/profile"      className={(navData) => (navData.isActive ? "activeButton" : 'nav-btn')}>  Profile   </NavLink> : ""}
                             </Nav>
                         </Col>
                     </Row>

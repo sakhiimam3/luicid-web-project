@@ -10,12 +10,31 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap" rel="stylesheet">
     <title>React App</title>
   </head>
   <style>
-    .section::-webkit-scrollbar-track {
-      background-color: darkgrey;
+ body::-webkit-scrollbar {
+    width: 16px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: rgb(82, 82, 82);        /* color of the tracking area */
+  }
+  * {
+  border-radius: 0 !important;
+  
+}
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: rgb(61, 61, 66);    /* color of the scroll thumb */
+    border-radius: 8px;       /* roundness of the scroll thumb */
+    border: 3px solid rgb(59, 57, 57);  /* creates padding around scroll thumb */
+  }
+    #root{
+      background-color: rgb(102, 120, 104);
     }
   </style>
   <body>
